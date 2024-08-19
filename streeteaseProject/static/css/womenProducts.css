@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Outfit', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    overflow-y: auto;
+    line-height: 1.5;
+    align-items: center;
+    justify-content: center;
+    background-color: #E8ECF1;
+}
+
+header{
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+}
+.banner {
+    width: 100%;
+    height: 60vh;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #405D72;
+    text-transform: uppercase;
+}
+
+.navbar ul li a:hover {
+    color: #948979;
+}
+
+.logo {
+    width: 170px;
+    height: 140px;
+    position: relative;
+    left: -10%;
+}
+
+.center-text h2 {
+    color: #111;
+    font-size: 28px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.center-text span {
+    color: #8D493A;
+}
+
+#cart{
+    color: #405D72;
+    text-decoration: none;
+    position: absolute;
+    right: 2.5%;
+    top: 10%;
+    font-size: 35px;
+    border-radius: 30px;
+    padding: 3px 12px;
+}
+
+#cart:hover{
+    background-color: #948979;
+    color: black;
+}
+.products {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    gap: 2rem;
+    padding: 20px;
+}
+
+.row {
+    background: #c7bcb9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.40s;
+}
+
+.row img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.row img:hover{
+    transform: scale(0.9);
+}
+
+.product-text h5,
+.price h4,
+.price p {
+    margin: 10px 0;
+}
+.product-text h5{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    color: #EEF7FF;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #27b737;
+    padding: 3px 10px;
+    border-radius: 2px; 
+}
+.heart-icon {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+
+}
+.heart-icon:hover{
+    color: red;
+}
+.rating i{
+    color: #FF8C00;
+    font-size: 18px;
+}
+footer{
+    position: relative; /*rag3y de ya rawan lw fe moshkela*/
+    height: 50vh;
+    bottom: 0;
+    padding: 70px 0;
+    background-color: #4D869C;
+    
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row_2{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.column{
+    width: 25%;
+    padding: 0 15px;
+}
+.column h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.column ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.column ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.column .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.column .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}

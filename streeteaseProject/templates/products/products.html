@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Street Ease</title>
+    <link rel="stylesheet" href="{% static 'css/womenProducts.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <div class="navbar">
+          <img
+            src="{% static 'images/mainLogo.png' %}"
+            class="logo"
+            alt="Logo"
+          />
+          <ul>
+            <li>
+              <a href="home.html"><b>Home</b></a>
+            </li>
+            <li>
+              <a href="menWomen.html"><b>Products</b></a>
+            </li>
+            <li>
+              <a href="about-us.html"><b>About</b></a>
+            </li>
+            <li>
+              <a href="contactUs.html"><b>Contact us</b></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a href="Cart.html" id="cart">
+        <i class="bx bx-cart"></i>
+      </a>
+    </header>
+    <section class="product-display" id="displaying">
+      <div class="center-text">
+        <h2><span>Products</span></h2>
+      </div>
+      <div class="products">
+        {% for item in products_with_images %}
+        <div class="row">
+          <a href="{% url 'product_detail' item.product.id %}">
+            <img
+              src="{% static 'images/' %}{{ item.image_url }}"
+              alt="Product Image"
+            />
+          </a>
+          <div class="product-text">
+            <p>{{ item.product.name }}</p>
+            <p>{{ item.product.price }} EGP</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <footer>
+      <div>
+        <div class="row_2">
+          <div class="column">
+            <h4>company</h4>
+            <ul>
+              <li><a>about us</a></li>
+              <li><a>our services</a></li>
+              <li><a>privacy policies</a></li>
+              <li><a>affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>get help</h4>
+            <ul>
+              <li><a>FAQ</a></li>
+              <li><a>shipping</a></li>
+              <li><a>returns</a></li>
+              <li><a>order status</a></li>
+              <li><a>payment methods</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>online shop</h4>
+            <ul>
+              <li><a>shirts</a></li>
+              <li><a>T-shirts</a></li>
+              <li><a>pants</a></li>
+              <li><a>sneakers</a></li>
+              <li><a>watches</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/rawanmoustafaaa?mibextid=ZbWKwL"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a
+                href="https://www.instagram.com/abdallah__yehya?igsh=MTcydm0zaHE1OWYwcQ=="
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

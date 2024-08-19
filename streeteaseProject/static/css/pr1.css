@@ -1,0 +1,235 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+body{
+    overflow-y:auto ;
+    line-height: 1.5;
+    align-items: center;
+    justify-content: center;
+    background-color: #E8ECF1;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:  #405D72;
+    text-transform: uppercase;
+}
+.navbar ul li a:hover{
+    color:#948979;
+}
+.logo{
+    width: 170px;
+    height: 140px;
+    position: relative;
+    left: -10%;
+}
+#cart{
+    color: #405D72;
+    text-decoration: none;
+    position: absolute;
+    right: 2.5%;
+    top: 10%;
+    font-size: 35px;
+    border-radius: 30px;
+    padding: 3px 12px;
+}
+#cart:hover{
+    background-color: #948979;
+    color:black;
+}
+
+main {
+    padding: 20px;
+    margin-top: 0px;
+    position: center;
+    min-height: 70vh;
+    margin-bottom: 30px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; 
+    display: flex;
+    align-items: center;
+    position:absolute;
+    left:10%;
+    top:30%;
+
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-image img {
+    max-width: 300px; 
+    height: auto;
+    margin-right: 100px;
+    margin-top: 180px;
+}
+
+.product-details h2 {
+    margin-top: 30px; 
+    font-size: 50px;
+    color:#24262b; 
+    text-transform: capitalize;
+    text-wrap: nowrap;
+}
+.product-details{
+    border-style:solid 0px;
+    border-radius: 20px;
+    margin-left: 170px;
+    padding-left: 70px;
+    width: 450px;
+    height: 450px;
+    text-align: left;
+    color:#24262b;
+    font-size: 20px;
+}
+
+button {
+    background-color: #7AB2B2;
+    color:#24262b;
+    font-size: 20px;
+    border: none;
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 25px;
+    margin-bottom: 100px;
+    margin-top: 40px;
+    margin-left: 70px;
+}
+
+button:hover {
+    background-color: #8D493A;
+    color: #D0B8A8;
+}
+.colour{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.size{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.thumbnails {
+    justify-content: center;
+    position: relative;
+    right: 175%;
+    top: 125%;
+    bottom: 90%;
+}
+.thumbnail {
+    width: 80px; 
+    height: auto; 
+    margin-right: 10px; 
+    cursor: pointer;
+}
+.thumbnail:last-child {
+    margin-right: 0; 
+}
+.about li{
+    position: relative;
+    left: 5%;
+    right: 5%;
+}
+.description{
+    color: #24262b;
+}
+.size{
+    font-size: 35px;
+    color: #24262b;
+}
+#size{
+    border: solid;
+    border-color: #4D869C;
+    border-radius: 25px;
+    width: 120px;
+    height: 40px;
+}
+footer{
+    position: relative; /*rag3y de ya rawan lw fe moshkela*/
+        height: 50vh;
+        bottom: 0;
+        padding: 70px 0;
+        background-color: #4D869C;
+        
+    }
+.container{
+        max-width: 1170px;
+        margin:auto;
+    }
+.row{
+        display: flex;
+        flex-wrap: wrap;
+    }
+ul{
+        list-style: none;
+    }
+.column{
+        width: 25%;
+        padding: 0 15px;
+    }
+.column h4{
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+    }
+    .column ul li a{
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    .column ul li a:hover{
+        color: #ffffff;
+        padding-left: 8px;
+    }
+    .column .social-links a{
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255,255,255,0.2);
+        margin:0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+    .column .social-links a:hover{
+        color: #24262b;
+        background-color:#ffffff;
+    }
+
+

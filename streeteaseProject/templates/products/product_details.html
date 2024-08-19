@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ product.name }} - Street Ease</title>
+    <link rel="stylesheet" href="{% static 'css/pr1.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <div class="navbar">
+          <img src="{% static 'images/' %}mainLogo.png" class="logo" />
+          <ul>
+            <li>
+              <a href="home.html"><b>Home</b></a>
+            </li>
+            <li>
+              <a href="menWomen.html"><b>Products</b></a>
+            </li>
+            <li>
+              <a href="about-us.html"><b>About</b></a>
+            </li>
+            <li>
+              <a href="contactUs.html"><b>Contact us</b></a>
+            </li>
+          </ul>
+        </div>
+        <a href="Cart.html" id="cart"><i class="bx bx-cart"></i></a>
+      </div>
+    </header>
+    <main>
+      <section class="product">
+        <div class="product-image">
+          <img
+            src="{% static 'images/' %}{{ first_image_url }}"
+            alt="{{ product.name }}"
+          />
+        </div>
+        <div class="product-details">
+          <div class="thumbnails">
+            {% for image in images %}
+            <img
+              src="{% static 'images/' %}{{ image.url }}"
+              alt="Thumbnail"
+              class="thumbnail"
+            />
+            {% endfor %}
+          </div>
+          <h2>{{ product.name }}</h2>
+          <p><b>{{ product.price }} EGP</b></p>
+
+          <div class="description">
+            <ul>
+              <li>Gender: {{ product.gender }}</li>
+              <li>Material: {{ product.material }}</li>
+            </ul>
+          </div>
+
+          <form action="{% url 'add_to_cart' product.id %}" method="POST">
+            {% csrf_token %}
+            <label for="size">Size</label><br />
+            <select id="size" name="size_id">
+              {% for size in sizes %}
+              <option value="{{ size.id }}">
+                {{ size.size_name }} ({{ size.size_quantity }} available)
+              </option>
+              {% endfor %}
+            </select>
+            <button type="submit">Add to Cart</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <div class="row">
+          <div class="column">
+            <h4>Company</h4>
+            <ul>
+              <li><a>About Us</a></li>
+              <li><a>Our Services</a></li>
+              <li><a>Privacy Policies</a></li>
+              <li><a>Affiliate Program</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>Get Help</h4>
+            <ul>
+              <li><a>FAQ</a></li>
+              <li><a>Shipping</a></li>
+              <li><a>Returns</a></li>
+              <li><a>Order Status</a></li>
+              <li><a>Payment Methods</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>Online Shop</h4>
+            <ul>
+              <li><a>Shirts</a></li>
+              <li><a>T-shirts</a></li>
+              <li><a>Pants</a></li>
+              <li><a>Sneakers</a></li>
+              <li><a>Watches</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/rawanmoustafaaa?mibextid=ZbWKwL"
+                id="fb"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a
+                href="https://www.instagram.com/abdallah__yehya?igsh=MTcydm0zaHE1OWYwcQ=="
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'js/' %}pr1.js"></script>
+  </body>
+</html>
