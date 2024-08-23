@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <header>
+    <div class="banner">
+      <div class="navbar">
+        <img src="{% static 'images/'%}mainLogo.png" class="logo" />
+        <ul>
+          <li>
+            <a href="{% url 'home_view' %}"><b>Home</b></a>
+          </li>
+          <li>
+            <a href="{% url 'menWomen' %}"><b>Products</b></a>
+          </li>
+          <li>
+            <a href="{% url 'aboutUs' %}"><b>About</b></a>
+          </li>
+          <li>
+            <a href="{% url 'contactUs' %}"><b>Contact us</b></a>
+          </li>
+        </ul>
+      </div>
+      <a href="{% url 'cart_view' %}" id="cart"><i class="bx bx-cart"></i></a>
+    </div>
+  </header>
+  <body>
+    <div style="min-height: 70vh">
+      <form action="{% url 'thank_you' %}">
+        <label for="fname">First name:</label><br />
+        <input type="text" id="fname" name="fname" required /><br />
+        <label for="lname">Last name:</label><br />
+        <input type="text" id="lname" name="lname" required /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+        <label for="address">Address:</label><br />
+        <input type="text" id="address" name="address" required /><br />
+        <label for="number">Number:</label><br />
+        <input type="tel" id="number" name="number" required /><br />
+        <label for="payment">Choose a payment method:</label><br />
+        <select id="payment" name="payment" required>
+          <option value="Cash">Cash</option>
+          <option value="Visa">Visa</option>
+          <option value="Vodafone,Etisalat,Orange Cash">
+            Vodafone, Etisalat, Orange Cash
+          </option>
+        </select>
+        <br /><br />
+        <input type="submit" value="Confirm" />
+      </form>
+    </div>
+    <footer>
+      <div>
+        <div class="row">
+          <div class="column">
+            <h4>company</h4>
+            <ul>
+              <li><a>about us</a></li>
+              <li><a>our srvices</a></li>
+              <li><a>privacy policies</a></li>
+              <li><a>afiliate program</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>get help</h4>
+            <ul>
+              <li><a>FAQ</a></li>
+              <li><a>shipping</a></li>
+              <li><a>returns</a></li>
+              <li><a>order status</a></li>
+              <li><a>payment methods</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>online shop</h4>
+            <ul>
+              <li><a>shirts</a></li>
+              <li><a>T-shirts</a></li>
+              <li><a>pants</a></li>
+              <li><a>sneakers</a></li>
+              <li><a>watches</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/rawanmoustafaaa?mibextid=ZbWKwL"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a
+                href="https://www.instagram.com/abdallah__yehya?igsh=MTcydm0zaHE1OWYwcQ=="
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

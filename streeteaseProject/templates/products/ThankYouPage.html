@@ -1,8 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Shopping Cart</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You Page</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <link
       rel="stylesheet"
@@ -15,7 +17,7 @@
   </head>
   <body>
     <header>
-      <div class="banner">
+       <div class="banner">
         <div class="navbar">
           <img src="{% static 'images/'%}mainLogo.png" class="logo" />
           <ul>
@@ -36,63 +38,48 @@
         <a href="{% url 'cart_view' %}" id="cart"><i class="bx bx-cart"></i></a>
       </div>
     </header>
-    <main>
-      <div class="container-height">
-        <h1>Welcome to your cart!</h1>
-        <div id="cart-container">
-          <table id="cart-table">
-            <colgroup>
-              <col span="1" style="width: 55%" />
-              <col span="1" style="width: 25%" />
-              <col span="1" style="width: 10%" />
-              <col span="1" style="width: 10%" />
-            </colgroup>
-          </table>
-        </div>
-        <div>
-          Total price: <span id="total"></span>
-          <a href="{% url 'checkout_view' %}">
-            <button id="checkout-button">
-                Checkout
-            </button>
-        </a>
-        </div>
+
+    <div class="container center container-height">
+      <div>
+        <h1>Thanks For Choosing Us!</h1>
+        <p>We will contact you as soon as possible.</p>
       </div>
-    </main>
+    </div>
+
     <footer>
       <div>
         <div class="row">
           <div class="column">
-            <h4>company</h4>
+            <h4>Company</h4>
             <ul>
-              <li><a>about us</a></li>
-              <li><a>our services</a></li>
-              <li><a>privacy policies</a></li>
-              <li><a>affiliate program</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Services</a></li>
+              <li><a href="#">Privacy Policies</a></li>
+              <li><a href="#">Affiliate Program</a></li>
             </ul>
           </div>
           <div class="column">
-            <h4>get help</h4>
+            <h4>Get Help</h4>
             <ul>
-              <li><a>FAQ</a></li>
-              <li><a>shipping</a></li>
-              <li><a>returns</a></li>
-              <li><a>order status</a></li>
-              <li><a>payment methods</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Order Status</a></li>
+              <li><a href="#">Payment Methods</a></li>
             </ul>
           </div>
           <div class="column">
-            <h4>online shop</h4>
+            <h4>Online Shop</h4>
             <ul>
-              <li><a>shirts</a></li>
-              <li><a>T-shirts</a></li>
-              <li><a>pants</a></li>
-              <li><a>sneakers</a></li>
-              <li><a>watches</a></li>
+              <li><a href="#">Shirts</a></li>
+              <li><a href="#">T-shirts</a></li>
+              <li><a href="#">Pants</a></li>
+              <li><a href="#">Sneakers</a></li>
+              <li><a href="#">Watches</a></li>
             </ul>
           </div>
           <div class="column">
-            <h4>follow us</h4>
+            <h4>Follow Us</h4>
             <div class="social-links">
               <a href="https://www.facebook.com/rawanmoustafaaa?mibextid=ZbWKwL"
                 ><i class="fab fa-facebook-f"></i
@@ -108,11 +95,5 @@
         </div>
       </div>
     </footer>
-    <script id="cart-data" type="application/javascript">
-      var cartData = JSON.parse('{{ cart|escapejs }}');
-      var data_url="{% url 'cart_view' %}"
-      const csrftokenht = '{{ csrf_token }}';
-    </script>
-    <script src="{% static 'js/'%}cart.js "></script>
   </body>
 </html>

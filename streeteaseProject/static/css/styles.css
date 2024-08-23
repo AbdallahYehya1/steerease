@@ -169,7 +169,7 @@ ul{
 }
 form {
     max-width: 30%;
-     margin-left: 30px;
+    margin-left: 30px;
 }
 
 label {
@@ -219,7 +219,6 @@ input[type="submit"] {
     font-size: 16px;
     transition: background-color 0.3s ease;
     margin-top: 10px;
-	margin-left: 20px;
 }
 .danger{
 	background-color: rgb(147, 15, 15);

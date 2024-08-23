@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split Screen</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body style="height: 100%; margin: 0">
+    <div class="split left" id="left-half">
+        <div class="centered">
+            <img
+                src="{% static 'images/modell.jpg' %}"
+                alt="Left Side"
+                style="width: 100%; height: 100%; object-fit: cover"
+            />
+            <div class="centered-text">Men</div>
+        </div>
+    </div>
+    <div class="split right" id="right-half">
+        <div class="centered">
+            <img
+                src="{% static 'images/girlmodell.jpg' %}"
+                alt="Right Side"
+                style="width: 100%; height: 100%; object-fit: cover"
+            />
+            <div class="centered-text">Women</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('left-half').addEventListener('click', function() {
+            window.location.href = '{% url "product_list" %}?gender=M';
+        });
+
+        document.getElementById('right-half').addEventListener('click', function() {
+            window.location.href = '{% url "product_list" %}?gender=F';
+        });
+    </script>
+</body>
+</html>

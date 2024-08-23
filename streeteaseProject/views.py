@@ -6,7 +6,7 @@ import json
 # Create your views here.
 
 def index(request):
-    return render(request,"hello/home.html")
+    return render(request,"products/home.html")
 # your_app/views.py
 
 
@@ -51,29 +51,73 @@ def add_to_cart(request, product_id):
 
     return HttpResponse(status=400)
 
-
-
+def home_view(request):
+     return render(request, 'home.html')
+def contact(request):
+     return render(request, 'products/contactUs.html')
+def menwomen(request):
+     return render(request, 'products/menWomen.html')
+def aboutUs(request):
+     return render(request, 'products/about-us.html')
 def cart_view(request):
     session_id = request.session.session_key
     if not session_id:
         request.session.create()  # Create a new session if it doesn't exist
         session_id = request.session.session_key
 
-    # Get the cart items for the current session
-    cart_items = Cart.objects.filter(session_id=session_id)
+    if request.method == 'GET':
+        # Get the cart items for the current session
+        cart_items = Cart.objects.filter(session_id=session_id)
 
-    # Convert cart items to a list of dictionaries
-    cart_data = []
-    for item in cart_items:
-        cart_data.append({
-            'id': item.product.id,
-            'name': item.product.name,
-            'quantity': item.quantity,
-            'price': float(item.product.price),
-            'imagepath': item.imageUrl,  # Update with correct image field
-            'size_name': item.size.size_name,  # Assuming you want size_name
-        })
-    print(cart_data)
+        # Convert cart items to a list of dictionaries
+        cart_data = []
+        for item in cart_items:
+            cart_data.append({
+                'id': item.product.id,
+                'name': item.product.name,
+                'quantity': item.quantity,
+                'price': float(item.product.price),
+                'imagepath': item.imageUrl,  # Update with correct image field
+                'size_name': item.size.size_name,  # Assuming you want size_name
+            })
+    elif request.method == 'POST':
+        operation = request.POST.get('operation')
+        prod_id = request.POST.get('id')
+        sname = request.POST.get('sName')
+        session_id = request.session.session_key
+        print(f"Operation: {operation}, Product ID: {prod_id}, Size Name: {sname}, Session ID: {session_id}")
+        # Get the size object, or return a 404 if it doesn't exist
+        sizeid = get_object_or_404(Size, size_name=sname.upper(), product_id=prod_id)
+        print(f"sizeid: {sizeid}")
+        # Check if the cart item exists
+        cart_items = Cart.objects.filter(session_id=session_id, size=sizeid.id, product_id=prod_id)
+        
+        if cart_items.exists():
+            cart_item = cart_items[0]
+        
+
+        if operation == '-':
+            if cart_item.quantity > 1:
+                cart_item.quantity -= 1
+                cart_item.save()
+            else:
+                cart_item.delete()
+            
+
+        elif operation == '+':
+            # Check if there is enough stock available
+            if sizeid.size_quantity > cart_item.quantity:
+                cart_item.quantity += 1
+                cart_item.save()
+           
+        
+        elif operation == 'remove':
+            cart_item.delete()
+            
+
+        return redirect('cart_view')
+        
+
     context = {
         'cart': json.dumps(cart_data),
     }
@@ -83,8 +127,10 @@ def cart_view(request):
 
 def product_list(request):
     products_with_images = []
+    gender = request.GET.get('gender', '')
+    products = Product.objects.filter(gender=gender)
     
-    for product in Product.objects.all():
+    for product in products:
         first_image = images.objects.filter(product_id=product.id).first()  # Get the first image for the product
         products_with_images.append({
             'product': product,
@@ -92,6 +138,22 @@ def product_list(request):
         })
 
     return render(request, 'products/products.html', {'products_with_images': products_with_images})
+
+def checkout_view(request):
+    session_id = request.session.session_key
+    cart=Cart.objects.filter(session_id=session_id)
+    for item in cart:
+        quantity=item.quantity
+        size=get_object_or_404(Size,id=item.size_id)
+        size.size_quantity-=quantity
+        size.save()
+        
+    cart.delete()    
+    return render(request, 'products/Checkout.html')
+
+def thank_you(request):
+
+    return render(request, 'products/ThankYouPage.html')
 
 def product_detail(request, product_id):
     # Get the product with the given id

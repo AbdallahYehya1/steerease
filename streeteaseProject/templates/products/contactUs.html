@@ -1,0 +1,119 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{% static 'css/'%}styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+          <div class="navbar">
+            <img src="{% static 'images/'%}mainLogo.png" class="logo" />
+            <ul>
+              <li>
+                <a href="{% url 'home_view' %}"><b>Home</b></a>
+              </li>
+              <li>
+                <a href="{% url 'menWomen' %}"><b>Products</b></a>
+              </li>
+              <li>
+                <a href="{% url 'aboutUs' %}"><b>About</b></a>
+              </li>
+              <li>
+                <a href="{% url 'contactUs' %}"><b>Contact us</b></a>
+              </li>
+            </ul>
+          </div>
+          <a href="{% url 'cart_view' %}" id="cart"><i class="bx bx-cart"></i></a>
+        </div>
+  </header>
+
+    <div class="container">
+      <h1>Contact Us</h1>
+      <br />
+      <br />
+      <p>You can contact us through the following channels:</p>
+      <br />
+      <div class="contact-methods">
+        <div class="contact-item">
+          <i class="fab fa-facebook-f"></i>
+          <a href="https://www.facebook.com/rawanmoustafaaa?mibextid=ZbWKwL"
+            >Facebook</a
+          >
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-instagram"></i>
+          <a
+            href="https://www.instagram.com/abdallah__yehya?igsh=MTcydm0zaHE1OWYwcQ=="
+            >Instagram</a
+          >
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <span>+201288728317</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <div class="row">
+          <div class="column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Services</a></li>
+              <li><a href="#">Privacy Policies</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>Get Help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Order Status</a></li>
+              <li><a href="#">Payment Methods</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>Online Shop</h4>
+            <ul>
+              <li><a href="#">Shirts</a></li>
+              <li><a href="#">T-shirts</a></li>
+              <li><a href="#">Pants</a></li>
+              <li><a href="#">Sneakers</a></li>
+              <li><a href="#">Watches</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/rawanmoustafaaa?mibextid=ZbWKwL"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a
+                href="https://www.instagram.com/abdallah__yehya?igsh=MTcydm0zaHE1OWYwcQ=="
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

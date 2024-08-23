@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/about-us.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>street ease</title>
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <div class="navbar">
+          <img src="{% static 'images/'%}mainLogo.png" class="logo" />
+          <ul>
+            <li>
+              <a href="{% url 'home_view' %}"><b>Home</b></a>
+            </li>
+            <li>
+              <a href="{% url 'menWomen' %}"><b>Products</b></a>
+            </li>
+            <li>
+              <a href="{% url 'aboutUs' %}"><b>About</b></a>
+            </li>
+            <li>
+              <a href="{% url 'contactUs' %}"><b>Contact us</b></a>
+            </li>
+          </ul>
+        </div>
+        <a href="{% url 'cart_view' %}" id="cart"><i class="bx bx-cart"></i></a>
+      </div>
+    </header>
+    <main>
+      <div class="about-us">
+        <h1>Urban vibes, ultimate comfort. That's Street Ease.</h1>
+        <p>
+          Street Ease is more than just a clothing brand; it's a lifestyle. Our
+          collections for both men and women are designed to merge comfort and
+          style effortlessly, making it easy for you to look good while feeling
+          at ease. From the bustling city streets to laid-back weekend getaways,
+          our versatile pieces fit seamlessly into any occasion. We believe in
+          creating fashion that doesn't compromise on quality or comfort,
+          ensuring that every item you wear from Street Ease makes a statement.
+          Whether you're dressing up for a night out or keeping it casual for a
+          day of errands, Street Ease has you covered with contemporary designs
+          and superior craftsmanship. Embrace the ease of fashion with Street
+          Ease, where looking good and feeling great come naturally.
+        </p>
+        <br />
+      </div>
+      <div class="container">
+        <h1>Customer Reviews</h1>
+        <div class="review">
+          <img src="round1-removebg-preview.png" class="round_image" />
+          <p>
+            "This is the best clothing store I've ever shopped at! The quality
+            is unmatched and the styles are always on point."
+          </p>
+          <p>- Sarah</p>
+        </div>
+        <div class="review">
+          <img src="round2.jpg" class="round_image" />
+          <p>
+            "I absolutely love the variety of clothes available. There is
+            something for every occasion and the prices are reasonable."
+          </p>
+          <p>- Jessica</p>
+        </div>
+        <div class="review">
+          <img src="round9-removebg-preview.png" class="round_image" />
+          <p>
+            "Fast shipping and great customer service. I had an issue with my
+            order and it was resolved quickly and efficiently."
+          </p>
+          <p>- Ziad</p>
+        </div>
+        <div class="review">
+          <img src="round4-removebg-preview.png" class="round_image" />
+          <p>
+            "The fabrics are so comfortable and the designs are very trendy. I
+            get compliments every time I wear their clothes."
+          </p>
+          <p>- Ahmed</p>
+        </div>
+        <div class="review">
+          <img src="roundd8-removebg-preview.png" class="round_image" />
+          <p>
+            "I am a regular customer now. The loyalty program is fantastic and I
+            always feel valued when I shop here."
+          </p>
+          <p>- Marihan</p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <div class="row">
+          <div class="column">
+            <h4>company</h4>
+            <ul>
+              <li><a>about us</a></li>
+              <li><a>our srvices</a></li>
+              <li><a>privacy policies</a></li>
+              <li><a>afiliate program</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>get help</h4>
+            <ul>
+              <li><a>FAQ</a></li>
+              <li><a>shipping</a></li>
+              <li><a>returns</a></li>
+              <li><a>order status</a></li>
+              <li><a>payment methods</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>online shop</h4>
+            <ul>
+              <li><a>shirts</a></li>
+              <li><a>T-shirts</a></li>
+              <li><a>pants</a></li>
+              <li><a>sneakers</a></li>
+              <li><a>watches</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/rawanmoustafaaa?mibextid=ZbWKwL"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a
+                href="https://www.instagram.com/abdallah__yehya?igsh=MTcydm0zaHE1OWYwcQ=="
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

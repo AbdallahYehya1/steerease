@@ -1,0 +1,169 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+body{
+    overflow-y:auto ;
+    overflow-x: hidden;
+    line-height: 1.5;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(w0362_1s_Boho-Spirit-Designer-Wallpaper_Repeating-Pattern-Sample-1.webp);
+    background-size: cover;
+    background-position: center; 
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.navbar ul li a:hover{
+    color: #4D869C;
+}
+.logo{
+    width: 170px;
+    height: 140px;
+    position: relative;
+    left: -10%;
+}
+#cart{
+    color: #EEF7FF;
+    text-decoration: none;
+    position: absolute;
+    right: 2.5%;
+    top: 10%;
+    font-size: 35px;
+    border-radius: 30px;
+    padding: 3px 12px;
+}
+#cart:hover{
+    background-color: #CDE8E5;
+    color: black;
+}
+.brandname{
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    color: #ffffff;
+}
+.brandname h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+.brandname p{
+    margin: 20px auto;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 25px;
+    color:#ffffff;
+}
+.box{
+    border-radius: 40px;
+    height: 80px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    align-items: center;
+    background: #ffffff;
+    width: 600px;
+    position:absolute;
+    left:27%;
+    top:75%;
+}
+.box input {
+    width: 150px;
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    color: #4D869C;
+    position: relative;
+    left: 5%;
+}
+.box a .fas{
+    color: #4D869C;
+    font-size: 30px;
+}
+footer{
+    position: relative; /*rag3y de ya rawan lw fe moshkela*/
+    height: 45vh;
+    bottom: 0;
+    padding: 70px 0;
+    background-color: #4D869C;
+    
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.column{
+    width: 25%;
+    padding: 0 15px;
+}
+.column h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.column ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.column ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.column .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.column .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
